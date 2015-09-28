@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/angular.min.js"></script>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    
+    <div class="container" ng-app="">
+        <div class="row">
+        <div class="col-md-12">
+        <h1>Angular - ng-model!</h1>
+
+          <form class="form-horizontal">
+            <fieldset>
+
+            <!-- Form Name -->
+            <legend>Form Name</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="textinput">Enter your age</label>  
+              <div class="col-md-4">
+              <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md" ng-model="age">
+              <span class="help-block">Guess your grandfather's age</span>  
+              </div>
+            </div>
+
+            </fieldset>
+            </form>
+            <div class="update-nag">
+                <div class="update-split update-success"><i class="glyphicon glyphicon-leaf"></i></div>
+                <div class="update-text"><p>Grandfather age is {{ age * 4 }}</p></div>
+            </div>
+        </div>
+        </div>
+    </div> 
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>    
+  </body>
+</html>
