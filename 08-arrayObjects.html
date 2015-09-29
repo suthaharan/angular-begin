@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="stApp">
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/angular.min.js"></script>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+		<div class="container" ng-controller="stController">
+        <div class="row">
+        <div class="col-md-12">
+        <h1>Angular - Array of Objects!</h1>
+
+				<div class="well">
+					<table class="table">
+					  <thead>
+						<tr>
+						  <th>#</th>
+						  <th>Movie Name</th>
+						  <th>Release Year</th>
+						  <th>Vote</th>
+						  <th style="width: 36px;"></th>
+						</tr>
+					  </thead>
+					  <tbody>
+						<tr ng-repeat="x in movies">
+						  <td>{{$index + 1 }}</td>
+						  <td>{{x.name}}</td>
+						  <td>{{x.year}}</td>
+						  <td>{{x.vote}}</td>
+						  <td>
+							  <a href="user.html"><i class="icon-pencil"></i></a>
+							  <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+						  </td>
+						</tr>
+					  </tbody>
+					</table>
+				</div>
+		</div>
+		
+		</div> <!-- /.row -->
+
+		</div>
+	
+
+		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>	
+		<script type="text/javascript">
+			var myApp = angular.module("stApp", []);
+			myApp.controller("stController", function($scope){
+				$scope.movies = [{name:"Mission Impossible", year:2015, vote:10},
+								 {name:"Interstellar", year:2014, vote:5},
+								 {name:"Gravity", year:2013, vote:8}
+								];
+			});
+		</script>
+  </body>
+</html>

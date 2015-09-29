@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="stApp">
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/angular.min.js"></script>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    
+    <div class="container" ng-controller="stController">
+        <div class="row">
+        <div class="col-md-12">
+        <h1>Angular - ng-repeat Properties in table display!</h1>
+        <h5>$index, $first, $middle, $last, $even, $odd</h5>
+          <div class="well">
+            <table class="table">
+              <thead>
+              <tr>
+                <th>#</th>
+                <th>Value</th>
+                <th>Display</th>
+                <th>First | Middle | Last</th>
+                <th>Even | Odd</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="x in cities">
+                <td>{{$index + 1 }}</td>
+                <td>{{x.value}}</td>
+                <td>{{x.displayName}}</td>
+                <td>{{$first}} | {{$middle}} | {{$last}}</td>
+                <td>{{$even}} | {{$odd}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        </div>
+    </div> 
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>    
+    <script type="text/javascript">
+      var myApp = angular.module("stApp", []);
+        myApp.controller("stController", function($scope){
+        $scope.age = 0;
+        $scope.filterCity={
+            myCity: 'TO'
+        }        
+        $scope.cities = [
+          {value: 'NY', displayName: 'New York'},
+          {value: 'LO', displayName: 'London'},
+          {value: 'TO', displayName: 'Toronto'}
+        ]        
+      });
+    </script>    
+  </body>
+</html>
